@@ -5,7 +5,7 @@ import MainIndex from '../pages/MainIndex';
 
 const routes: TAppRoute[] = [
 	{
-		path: '/',
+		path: 'main',
 		element: <MainIndex />,
 		name: 'MainIndex',
 	},
