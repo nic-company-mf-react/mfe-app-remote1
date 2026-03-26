@@ -13,7 +13,7 @@
     "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json,css,md}\""
   },
   "dependencies": {
-    "@company/mfe-lib-shared": "file:../mfe-lib-shared",
+    "@nic/mfe-lib-shared": "file:../mfe-lib-shared",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-router": "^7.13.2"
