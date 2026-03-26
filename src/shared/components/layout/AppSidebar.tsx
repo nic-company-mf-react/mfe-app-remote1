@@ -168,15 +168,28 @@ const AppSidebar: React.FC = () => {
 
 	return (
 		<aside
-			className={`fixed mt-16 flex flex-col lg:mt-0 top-0 px-5 left-0 bg-white dark:bg-gray-900 dark:border-gray-800 text-gray-900 h-screen transition-all duration-300 ease-in-out z-50 border-r border-gray-200
+			className={`fixed mt-16 flex flex-col lg:mt-0 top-0 px-5 left-0 bg-orange-50/50 dark:bg-orange-950/10 text-gray-900 h-screen transition-all duration-300 ease-in-out z-50 border-2 border-orange-400 dark:border-orange-500
         ${isExpanded || isMobileOpen ? 'w-[290px]' : isHovered ? 'w-[290px]' : 'w-[90px]'}
         ${isMobileOpen ? 'translate-x-0' : '-translate-x-full'}
         lg:translate-x-0`}
 			onMouseEnter={() => !isExpanded && setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
 		>
-			<div className={`py-6 flex ${!isExpanded && !isHovered ? 'lg:justify-center' : 'justify-start'}`}>
-				<Link to="/">
+			<div className={`py-6 flex flex-col gap-2 ${!isExpanded && !isHovered ? 'lg:items-center' : 'items-start'}`}>
+				{isExpanded || isHovered || isMobileOpen ? (
+					<span className="inline-flex items-center gap-1 text-[10px] font-bold text-orange-500 dark:text-orange-400 bg-orange-50 dark:bg-orange-950/40 border border-orange-300 dark:border-orange-700 rounded px-2 py-0.5 tracking-widest uppercase">
+						<span className="inline-block w-1.5 h-1.5 rounded-full bg-orange-400 animate-pulse" />
+						Remote1 · Dev
+					</span>
+				) : (
+					<span
+						className="inline-flex items-center justify-center w-6 h-6 rounded bg-orange-400 dark:bg-orange-500"
+						title="Remote1 · Dev Mode"
+					>
+						<span className="text-white text-[8px] font-black">DEV</span>
+					</span>
+				)}
+				<Link to="/main">
 					{isExpanded || isHovered || isMobileOpen ? (
 						<>
 							<div className="flex items-center gap-3 dark:hidden">

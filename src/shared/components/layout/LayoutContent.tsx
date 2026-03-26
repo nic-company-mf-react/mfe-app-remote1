@@ -8,7 +8,13 @@ export default function LayoutContent(): React.ReactNode {
 	const { isExpanded, isHovered, isMobileOpen } = useSidebar();
 
 	return (
-		<div className="min-h-screen xl:flex bg-gray-50 dark:bg-gray-950">
+		<div className="relative min-h-screen xl:flex bg-gray-50 dark:bg-gray-950">
+			<div className="fixed top-0 left-1/2 -translate-x-1/2 z-99999 pointer-events-none">
+				<span className="inline-flex items-center gap-1.5 bg-orange-400 dark:bg-orange-500 text-white text-[10px] font-bold px-3 py-0.5 rounded-b-md shadow-md tracking-widest uppercase">
+					<span className="inline-block w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+					Remote1 · Dev Mode
+				</span>
+			</div>
 			<div>
 				<AppSidebar />
 				<Backdrop />

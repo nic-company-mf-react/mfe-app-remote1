@@ -1,4 +1,13 @@
-import { Home, Landmark, CreditCard, PiggyBank, ArrowLeftRight, BarChart3, HeadphonesIcon, Settings } from 'lucide-react';
+import {
+	Home,
+	Landmark,
+	CreditCard,
+	PiggyBank,
+	ArrowLeftRight,
+	BarChart3,
+	HeadphonesIcon,
+	Settings,
+} from 'lucide-react';
 
 export type NavSubItem = {
 	name: string;
@@ -18,7 +27,7 @@ export const navItems: NavItem[] = [
 	{
 		icon: <Home />,
 		name: '홈',
-		subItems: [{ name: '개인뱅킹 홈', path: '/remote1/main' }],
+		subItems: [{ name: '개인뱅킹 홈', path: '/main' }],
 	},
 	{
 		icon: <Landmark />,
