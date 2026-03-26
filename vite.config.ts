@@ -10,7 +10,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
     federation({
-      name: "mfe-app-main",
+      name: "mfe-app-remote1",
       // 리모트 앱은 추후 생성되면 연결하여 사용합니다.
       //remotes: {
       //  mfe_docs: 'http://localhost:5174/mf-manifest.json',
