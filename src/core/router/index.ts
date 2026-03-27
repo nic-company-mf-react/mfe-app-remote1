@@ -7,7 +7,7 @@ const router = createAppRouter(routes, {
 	basename: import.meta.env.VITE_ROUTER_BASENAME,
 });
 
-// standalone 실행 시에만 등록 (host에 임베드 시 host의 $router를 그대로 사용)
+// standalone 실행 시에만 등록
 if (typeof window !== 'undefined' && !window.$router) {
 	registerWindowRouter(router);
 }
