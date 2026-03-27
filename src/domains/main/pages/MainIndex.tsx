@@ -94,11 +94,31 @@ const transactions = [
 
 const quickActions = [
 	{ name: '이체', Icon: ArrowUpRight, bg: 'bg-blue-50 dark:bg-blue-950/40', color: 'text-blue-600 dark:text-blue-400' },
-	{ name: '조회', Icon: Receipt, bg: 'bg-emerald-50 dark:bg-emerald-950/40', color: 'text-emerald-600 dark:text-emerald-400' },
-	{ name: '납부', Icon: Wallet, bg: 'bg-orange-50 dark:bg-orange-950/40', color: 'text-orange-500 dark:text-orange-400' },
-	{ name: '환전', Icon: Globe, bg: 'bg-purple-50 dark:bg-purple-950/40', color: 'text-purple-600 dark:text-purple-400' },
+	{
+		name: '조회',
+		Icon: Receipt,
+		bg: 'bg-emerald-50 dark:bg-emerald-950/40',
+		color: 'text-emerald-600 dark:text-emerald-400',
+	},
+	{
+		name: '납부',
+		Icon: Wallet,
+		bg: 'bg-orange-50 dark:bg-orange-950/40',
+		color: 'text-orange-500 dark:text-orange-400',
+	},
+	{
+		name: '환전',
+		Icon: Globe,
+		bg: 'bg-purple-50 dark:bg-purple-950/40',
+		color: 'text-purple-600 dark:text-purple-400',
+	},
 	{ name: '적금', Icon: PiggyBank, bg: 'bg-pink-50 dark:bg-pink-950/40', color: 'text-pink-600 dark:text-pink-400' },
-	{ name: '대출', Icon: CreditCard, bg: 'bg-indigo-50 dark:bg-indigo-950/40', color: 'text-indigo-600 dark:text-indigo-400' },
+	{
+		name: '대출',
+		Icon: CreditCard,
+		bg: 'bg-indigo-50 dark:bg-indigo-950/40',
+		color: 'text-indigo-600 dark:text-indigo-400',
+	},
 	{ name: '보험', Icon: Shield, bg: 'bg-teal-50 dark:bg-teal-950/40', color: 'text-teal-600 dark:text-teal-400' },
 	{ name: '혜택', Icon: Gift, bg: 'bg-red-50 dark:bg-red-950/40', color: 'text-red-500 dark:text-red-400' },
 ];
@@ -110,8 +130,7 @@ const notices = [
 ];
 
 /* ─────────────────────────── 유틸 ─────────────────────────── */
-const formatKRW = (n: number) =>
-	new Intl.NumberFormat('ko-KR').format(Math.abs(n));
+const formatKRW = (n: number) => new Intl.NumberFormat('ko-KR').format(Math.abs(n));
 
 const getDayOfWeek = () => {
 	const days = ['일', '월', '화', '수', '목', '금', '토'];
@@ -131,7 +150,6 @@ export default function MainIndex(): React.ReactNode {
 
 	return (
 		<div className="min-h-screen bg-gray-50 dark:bg-gray-900 px-4 py-5 lg:px-6 lg:py-6 space-y-5 max-w-screen-xl mx-auto">
-
 			{/* ── 앱 식별 뱃지 ── */}
 			<div className="flex items-center gap-2">
 				<span className="inline-flex items-center gap-1.5 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm tracking-wide">
@@ -146,8 +164,7 @@ export default function MainIndex(): React.ReactNode {
 				<div>
 					<p className="text-xs text-gray-400 dark:text-gray-500 mb-0.5">{dateStr}</p>
 					<h1 className="text-lg font-bold text-gray-900 dark:text-white">
-						안녕하세요,{' '}
-						<span className="text-blue-600 dark:text-blue-400">홍길동</span> 고객님 👋
+						안녕하세요, <span className="text-blue-600 dark:text-blue-400">홍길동</span> 고객님 👋
 					</h1>
 				</div>
 				<button className="relative w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-gray-800 shadow-theme-xs border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
@@ -212,9 +229,7 @@ export default function MainIndex(): React.ReactNode {
 					<div className="flex items-end gap-1.5 mb-4">
 						{balanceVisible ? (
 							<>
-								<span className="text-3xl font-bold tracking-tight">
-									{formatKRW(account.balance)}
-								</span>
+								<span className="text-3xl font-bold tracking-tight">{formatKRW(account.balance)}</span>
 								<span className="text-lg font-medium text-white/80 mb-0.5">원</span>
 							</>
 						) : (
@@ -318,17 +333,13 @@ export default function MainIndex(): React.ReactNode {
 								{tx.emoji}
 							</div>
 							<div className="flex-1 min-w-0">
-								<p className="text-sm font-medium text-gray-800 dark:text-gray-100 truncate">
-									{tx.name}
-								</p>
+								<p className="text-sm font-medium text-gray-800 dark:text-gray-100 truncate">{tx.name}</p>
 								<p className="text-xs text-gray-400 dark:text-gray-500">{tx.date}</p>
 							</div>
 							<div className="text-right shrink-0">
 								<p
 									className={`text-sm font-semibold ${
-										tx.amount > 0
-											? 'text-blue-600 dark:text-blue-400'
-											: 'text-gray-700 dark:text-gray-300'
+										tx.amount > 0 ? 'text-blue-600 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300'
 									}`}
 								>
 									{tx.amount > 0 ? '+' : '-'}
@@ -349,9 +360,7 @@ export default function MainIndex(): React.ReactNode {
 				<div className="relative overflow-hidden rounded-2xl bg-linear-to-br from-emerald-500 to-teal-600 p-4 text-white shadow-sm">
 					<div className="absolute -top-4 -right-4 w-20 h-20 bg-white/10 rounded-full" />
 					<div className="relative z-10">
-						<span className="text-xs font-semibold bg-white/20 px-2 py-0.5 rounded-full">
-							추천 상품
-						</span>
+						<span className="text-xs font-semibold bg-white/20 px-2 py-0.5 rounded-full">추천 상품</span>
 						<h3 className="mt-2 text-base font-bold">행복 정기적금</h3>
 						<p className="text-xs text-white/80 mt-0.5">연 최대 4.5% · 1년 만기</p>
 						<button className="mt-3 text-xs font-semibold bg-white text-emerald-600 px-3 py-1.5 rounded-lg hover:bg-emerald-50 transition-colors">
@@ -364,9 +373,7 @@ export default function MainIndex(): React.ReactNode {
 				<div className="relative overflow-hidden rounded-2xl bg-linear-to-br from-violet-500 to-purple-700 p-4 text-white shadow-sm">
 					<div className="absolute -top-4 -right-4 w-20 h-20 bg-white/10 rounded-full" />
 					<div className="relative z-10">
-						<span className="text-xs font-semibold bg-white/20 px-2 py-0.5 rounded-full">
-							한도 조회
-						</span>
+						<span className="text-xs font-semibold bg-white/20 px-2 py-0.5 rounded-full">한도 조회</span>
 						<h3 className="mt-2 text-base font-bold">신용 대출 한도</h3>
 						<p className="text-xs text-white/80 mt-0.5">최대 5천만원 · 금리 연 3.9%~</p>
 						<button className="mt-3 text-xs font-semibold bg-white text-violet-600 px-3 py-1.5 rounded-lg hover:bg-violet-50 transition-colors">
