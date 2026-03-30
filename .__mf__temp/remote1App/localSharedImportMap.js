@@ -4,6 +4,11 @@
     import {loadShare} from "@module-federation/runtime";
     const importMap = {
       
+        "@nic/mfe-lib-shared": async () => {
+          let pkg = await import("__mf__virtual/remote1App__prebuild___mf_0_nic_mf_1_mfe_mf_2_lib_mf_2_shared__prebuild__.js");
+            return pkg;
+        }
+      ,
         "@tanstack/react-query": async () => {
           let pkg = await import("__mf__virtual/remote1App__prebuild___mf_0_tanstack_mf_1_react_mf_2_query__prebuild__.js");
             return pkg;
@@ -32,6 +37,38 @@
     }
       const usedShared = {
       
+          "@nic/mfe-lib-shared": {
+            name: "@nic/mfe-lib-shared",
+            version: "0.0.0",
+            scope: ["default"],
+            loaded: false,
+            from: "remote1App",
+            async get () {
+              if (false) {
+                throw new Error(`[Module Federation] Shared module '${"@nic/mfe-lib-shared"}' must be provided by host`);
+              }
+              usedShared["@nic/mfe-lib-shared"].loaded = true
+              const {"@nic/mfe-lib-shared": pkgDynamicImport} = importMap
+              const res = await pkgDynamicImport()
+              const exportModule = false && "@nic/mfe-lib-shared" === "react"
+                ? (res?.default ?? res)
+                : {...res}
+              // All npm packages pre-built by vite will be converted to esm
+              Object.defineProperty(exportModule, "__esModule", {
+                value: true,
+                enumerable: false
+              })
+              return function () {
+                return exportModule
+              }
+            },
+            shareConfig: {
+              singleton: true,
+              requiredVersion: "^0.0.0",
+              
+            }
+          }
+        ,
           "@tanstack/react-query": {
             name: "@tanstack/react-query",
             version: "5.95.2",

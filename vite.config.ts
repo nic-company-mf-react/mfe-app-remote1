@@ -22,6 +22,7 @@ export default defineConfig({
 				'react-router': { singleton: true, requiredVersion: '^7.0.0' },
 				'@tanstack/react-query': { singleton: true, requiredVersion: '^5.95.2' },
 				'react-helmet-async': { singleton: true, requiredVersion: '^3.0.0' },
+				'@nic/mfe-lib-shared': { singleton: true, requiredVersion: '^0.0.0' },
 			},
 		}),
 	],

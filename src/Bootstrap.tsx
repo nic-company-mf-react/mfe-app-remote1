@@ -23,9 +23,10 @@ const queryConfig: QueryClientConfig = {
 };
 
 // Remote1 앱에서 REST API 호출용 API 설정
-initApiConfig({
+const apiConfig = {
 	baseURL: import.meta.env.VITE_EXTERNAL_API_BASE_URL2,
-});
+};
+initApiConfig(apiConfig);
 
 createRoot(document.getElementById('root')!).render(
 	<StrictMode>
