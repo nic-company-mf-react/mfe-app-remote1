@@ -12,6 +12,9 @@ export default defineConfig({
 		federation({
 			name: 'remote1App',
 			dts: false,
+			dev: {
+				disableDynamicRemoteTypeHints: true,
+			},
 			filename: 'remote1Entry.js',
 			exposes: {
 				'./Remote1App': './src/bridge.tsx',
