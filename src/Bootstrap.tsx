@@ -22,7 +22,7 @@ const queryConfig: QueryClientConfig = {
 	},
 };
 
-// host 앱에서 REST API 호출용 API 설정
+// Remote1 앱에서 REST API 호출용 API 설정
 initApiConfig({
 	baseURL: import.meta.env.VITE_EXTERNAL_API_BASE_URL2,
 });
