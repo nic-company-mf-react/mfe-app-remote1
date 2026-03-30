@@ -4,6 +4,11 @@
     import {loadShare} from "@module-federation/runtime";
     const importMap = {
       
+        "@tanstack/react-query": async () => {
+          let pkg = await import("__mf__virtual/remote1App__prebuild___mf_0_tanstack_mf_1_react_mf_2_query__prebuild__.js");
+            return pkg;
+        }
+      ,
         "react": async () => {
           let pkg = await import("__mf__virtual/remote1App__prebuild__react__prebuild__.js");
             return pkg;
@@ -11,6 +16,11 @@
       ,
         "react-dom": async () => {
           let pkg = await import("__mf__virtual/remote1App__prebuild__react_mf_2_dom__prebuild__.js");
+            return pkg;
+        }
+      ,
+        "react-helmet-async": async () => {
+          let pkg = await import("__mf__virtual/remote1App__prebuild__react_mf_2_helmet_mf_2_async__prebuild__.js");
             return pkg;
         }
       ,
@@ -22,6 +32,38 @@
     }
       const usedShared = {
       
+          "@tanstack/react-query": {
+            name: "@tanstack/react-query",
+            version: "5.95.2",
+            scope: ["default"],
+            loaded: false,
+            from: "remote1App",
+            async get () {
+              if (false) {
+                throw new Error(`[Module Federation] Shared module '${"@tanstack/react-query"}' must be provided by host`);
+              }
+              usedShared["@tanstack/react-query"].loaded = true
+              const {"@tanstack/react-query": pkgDynamicImport} = importMap
+              const res = await pkgDynamicImport()
+              const exportModule = false && "@tanstack/react-query" === "react"
+                ? (res?.default ?? res)
+                : {...res}
+              // All npm packages pre-built by vite will be converted to esm
+              Object.defineProperty(exportModule, "__esModule", {
+                value: true,
+                enumerable: false
+              })
+              return function () {
+                return exportModule
+              }
+            },
+            shareConfig: {
+              singleton: true,
+              requiredVersion: "^5.95.2",
+              
+            }
+          }
+        ,
           "react": {
             name: "react",
             version: "19.0.0",
@@ -82,6 +124,38 @@
             shareConfig: {
               singleton: true,
               requiredVersion: "^19.0.0",
+              
+            }
+          }
+        ,
+          "react-helmet-async": {
+            name: "react-helmet-async",
+            version: "3.0.0",
+            scope: ["default"],
+            loaded: false,
+            from: "remote1App",
+            async get () {
+              if (false) {
+                throw new Error(`[Module Federation] Shared module '${"react-helmet-async"}' must be provided by host`);
+              }
+              usedShared["react-helmet-async"].loaded = true
+              const {"react-helmet-async": pkgDynamicImport} = importMap
+              const res = await pkgDynamicImport()
+              const exportModule = false && "react-helmet-async" === "react"
+                ? (res?.default ?? res)
+                : {...res}
+              // All npm packages pre-built by vite will be converted to esm
+              Object.defineProperty(exportModule, "__esModule", {
+                value: true,
+                enumerable: false
+              })
+              return function () {
+                return exportModule
+              }
+            },
+            shareConfig: {
+              singleton: true,
+              requiredVersion: "^3.0.0",
               
             }
           }

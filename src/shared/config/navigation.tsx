@@ -77,11 +77,8 @@ export const navItems: NavItem[] = [
 export const othersItems: NavItem[] = [
 	{
 		icon: <HeadphonesIcon />,
-		name: '고객센터',
-		subItems: [
-			{ name: '자주 묻는 질문', path: '/main' },
-			{ name: '1:1 문의', path: '/main' },
-		],
+		name: 'API Reference',
+		subItems: [{ name: 'useApi() 훅 예제제', path: '/example/use-api-example' }],
 	},
 	{
 		icon: <Settings />,

@@ -20,6 +20,8 @@ export default defineConfig({
 				react: { singleton: true, requiredVersion: '^19.0.0' },
 				'react-dom': { singleton: true, requiredVersion: '^19.0.0' },
 				'react-router': { singleton: true, requiredVersion: '^7.0.0' },
+				'@tanstack/react-query': { singleton: true, requiredVersion: '^5.95.2' },
+				'react-helmet-async': { singleton: true, requiredVersion: '^3.0.0' },
 			},
 		}),
 	],
