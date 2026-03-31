@@ -30,6 +30,7 @@ export default defineConfig({
 		}),
 	],
 	resolve: {
+		dedupe: ['react', 'react-dom', 'react-router'],
 		alias: {
 			'@': resolve(__dirname, 'src'),
 		},
