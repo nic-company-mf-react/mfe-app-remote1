@@ -10,7 +10,7 @@ export default defineConfig({
 	// Rolldown이 이들을 번들링할 때 식별자 minify 버그로 `import { t } from 'react'`를
 	// 생성합니다. MF shared 또는 peer dep으로 사용되는 패키지는 exclude 처리합니다.
 	optimizeDeps: {
-		exclude: ['@nic/mfe-lib-shared', 'react-i18next', 'i18next'],
+		exclude: ['@nic/mfe-lib-shared'],
 	},
 	plugins: [
 		react(),
@@ -29,7 +29,7 @@ export default defineConfig({
 				react: { singleton: true, requiredVersion: '^19.0.0' },
 				'react-dom': { singleton: true, requiredVersion: '^19.0.0' },
 				'react-router': { singleton: true, requiredVersion: '^7.0.0' },
-				'@tanstack/react-query': { singleton: true, requiredVersion: '^5.95.2' },
+				'@tanstack/react-query': { singleton: true, requiredVersion: '^5.96.2' },
 				'react-helmet-async': { singleton: true, requiredVersion: '^3.0.0' },
 				'@nic/mfe-lib-shared': { singleton: true, requiredVersion: '^0.0.0' },
 			},

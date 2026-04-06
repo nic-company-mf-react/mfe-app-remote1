@@ -55,7 +55,7 @@ export default function SampleComponent(): React.ReactNode {
 			<div className="mt-3 space-y-2">
 				{isLoading && <LoadingSpinner />}
 				{isError && <ErrorBox message={error?.message ?? '알 수 없는 오류'} />}
-				{data?.map((post) => (
+				{data?.map((post: IPost) => (
 					<PostItem
 						key={post.id}
 						post={post}
