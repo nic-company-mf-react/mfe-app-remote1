@@ -13,8 +13,8 @@
 		"format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json,css,md}\""
 	},
 	"dependencies": {
-		"@loadable/component": "^5.16.7",
 		"@axiom/mfe-lib-shared": "file:../mfe-lib-shared",
+		"@loadable/component": "^5.16.7",
 		"@tanstack/react-query": "^5.96.2",
 		"i18next": "^26.0.3",
 		"lucide-react": "^1.7.0",
@@ -22,7 +22,8 @@
 		"react-dom": "^19.2.4",
 		"react-helmet-async": "^3.0.0",
 		"react-i18next": "^17.0.2",
-		"react-router": "^7.13.2"
+		"react-router": "^7.13.2",
+		"zustand": "^5.0.12"
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.39.4",

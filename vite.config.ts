@@ -32,6 +32,10 @@ export default defineConfig({
 				'@tanstack/react-query': { singleton: true, requiredVersion: '^5.96.2' },
 				'react-helmet-async': { singleton: true, requiredVersion: '^3.0.0' },
 				'@axiom/mfe-lib-shared': { singleton: true, requiredVersion: '^0.0.0' },
+				zustand: {
+					singleton: true,
+					requiredVersion: '^5.0.0', // package.json과 맞춤
+				},
 			},
 		}),
 	],
