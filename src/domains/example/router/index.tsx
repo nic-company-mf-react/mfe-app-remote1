@@ -1,4 +1,4 @@
-import type { TAppRoute } from '@nic/mfe-lib-shared/types';
+import type { TAppRoute } from '@axiom/mfe-lib-shared/types';
 import loadable from '@loadable/component';
 
 // 라우터에 연결할 페이지를 import 한다.

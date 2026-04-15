@@ -11,7 +11,7 @@ export default function UseApiExample(): React.ReactNode {
 				<div className="flex items-center gap-2">
 					<h1 className="text-2xl font-bold text-gray-800 dark:text-white/90">useApi</h1>
 					<span className="inline-flex items-center rounded-full bg-brand-50 px-2.5 py-0.5 text-xs font-semibold text-brand-600 dark:bg-brand-500/10 dark:text-brand-400">
-						@nic/mfe-lib-shared
+						@axiom/mfe-lib-shared
 					</span>
 				</div>
 				<p className="mt-1.5 text-theme-sm text-gray-500 dark:text-gray-400">
@@ -27,7 +27,7 @@ export default function UseApiExample(): React.ReactNode {
 						<span className="text-yellow-300">useApi</span>
 						<span className="text-white">{' }'}</span>
 						<span className="text-purple-400"> from </span>
-						<span className="text-green-300">'@nic/mfe-lib-shared/hooks'</span>
+						<span className="text-green-300">'@axiom/mfe-lib-shared/hooks'</span>
 						<span className="text-white">;</span>
 					</code>
 				</div>

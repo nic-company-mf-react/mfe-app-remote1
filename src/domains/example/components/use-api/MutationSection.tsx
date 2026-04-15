@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { CodeBlockClient } from '@nic/mfe-lib-shared/components';
-import { useApi } from '@nic/mfe-lib-shared/hooks';
+import { CodeBlockClient } from '@axiom/mfe-lib-shared/components';
+import { useApi } from '@axiom/mfe-lib-shared/hooks';
 import { SectionCard, ErrorBox } from './collectionComponent';
 import { Loader2, Send, CheckCircle2 } from 'lucide-react';
 

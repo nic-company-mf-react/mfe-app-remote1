@@ -1,5 +1,5 @@
-import { CodeBlockClient } from '@nic/mfe-lib-shared/components';
-import { useApi } from '@nic/mfe-lib-shared/hooks';
+import { CodeBlockClient } from '@axiom/mfe-lib-shared/components';
+import { useApi } from '@axiom/mfe-lib-shared/hooks';
 import { SectionCard, LoadingSpinner, ErrorBox, PostItem } from './collectionComponent';
 import { RefreshCw } from 'lucide-react';
 import { type IPost } from '../../types/post';

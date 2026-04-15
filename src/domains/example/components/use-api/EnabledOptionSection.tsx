@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { useApi } from '@nic/mfe-lib-shared/hooks';
+import { useApi } from '@axiom/mfe-lib-shared/hooks';
 import { SectionCard, LoadingSpinner, PostItem } from './collectionComponent';
 import { Loader2, Play } from 'lucide-react';
 
-import { CodeBlockClient } from '@nic/mfe-lib-shared/components';
+import { CodeBlockClient } from '@axiom/mfe-lib-shared/components';
 
 import { type IPost } from '../../types/post';
 
