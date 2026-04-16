@@ -11,6 +11,10 @@ export default defineConfig({
 	// 생성합니다. MF shared 또는 peer dep으로 사용되는 패키지는 exclude 처리합니다.
 	optimizeDeps: {
 		exclude: ['@axiom/mfe-lib-shared'],
+		// file: 링크된 mfe-lib-shared 쪽 중첩 node_modules와 원격 앱의 동일 패키지가
+		// 서로 다른 경로로 최적화되면, 일부 청크가 MF로 래핑된 react와 불일치하여
+		// `does not provide an export named 'createContext'` 가 날 수 있습니다.
+		include: ['react', 'react/jsx-runtime', 'react-dom', '@tanstack/react-query'],
 	},
 	plugins: [
 		react(),
@@ -40,7 +44,7 @@ export default defineConfig({
 		}),
 	],
 	resolve: {
-		dedupe: ['react', 'react-dom', 'react-router'],
+		dedupe: ['react', 'react-dom', 'react-router', '@tanstack/react-query', '@tanstack/query-core'],
 		alias: {
 			'@': resolve(__dirname, 'src'),
 		},
